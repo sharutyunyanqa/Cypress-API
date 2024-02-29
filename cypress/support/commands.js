@@ -11,10 +11,10 @@
 //
 // -- This is a parent command --
 Cypress.Commands.add("createUser", (id, username, firstName, lastName, email, password, phone, userStatus) => {
-    cy.request({ // добавляем объект для запроса
-        method: "POST", // пишем метод запроса
-        url: "https://petstore.swagger.io/v2/user", // пишем url, тот, куда будем направлять запрос
-        body: { // описываем юзера или новые данные для него
+    cy.request({ 
+        method: "POST", 
+        url: "https://petstore.swagger.io/v2/user", 
+        body: { 
             "id": id,
             "username": username,
             "firstName": firstName,
@@ -27,10 +27,10 @@ Cypress.Commands.add("createUser", (id, username, firstName, lastName, email, pa
     })
 });
 Cypress.Commands.add('updateUser', (id, username, firstName, lastName, email, password, phone, userStatus) => {
-    cy.request({ // добавляем объект для запроса
-        method: "PUT", // пишем метод запроса
-        url: "https://petstore.swagger.io/v2/user/Serg", // пишем url, тот, куда будем направлять запрос
-        body: { // описываем юзера или новые данные для него
+    cy.request({ 
+        method: "PUT", 
+        url: "https://petstore.swagger.io/v2/user/Serg",
+        body: { 
             "id": id,
             "username": username,
             "firstName": firstName,
@@ -44,9 +44,9 @@ Cypress.Commands.add('updateUser', (id, username, firstName, lastName, email, pa
 });
 
 Cypress.Commands.add('deleteUser', (username) => {
-    cy.request({ // добавляем объект для запроса
-        method: "DELETE", // пишем метод запроса
-        url: "https://petstore.swagger.io/v2/user/Serg", // пишем url, тот, куда будем направлять запрос
+    cy.request({ 
+        method: "DELETE", 
+        url: "https://petstore.swagger.io/v2/user/Serg", 
     })
 });
 

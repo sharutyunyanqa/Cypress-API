@@ -6,6 +6,11 @@ describe("API user tests", () => {
     cy.createUser(id[0], username, firstName, lastName, email, password, phone, userStatus)
       .then((response) => {  
         expect(response.status).to.eql(200); 
+        expect(response.body).to.eql({
+          code: 200,
+          type: "unknown",
+          message: "175",
+        });
       });
   });
 
@@ -25,7 +30,7 @@ describe("API user tests", () => {
         cy.deleteUser(username)
           .then((response) => {  
             expect(response.status).to.eql(200);
+            })
           });
       });
   });
-});
